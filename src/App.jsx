@@ -12,7 +12,6 @@ export default function App() {
   }
 
   function onDeleteItem(id) {
-    console.log("3step");
     setItems((items) => items.filter((item) => item.id !== id));
   }
 
