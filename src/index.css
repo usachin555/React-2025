@@ -54,9 +54,49 @@ body {
   max-width: 42rem;
   background-color: var(--color-background-500);
   border-radius: 0.9rem;
-  /* overflow: scroll; */
   position: relative;
+
+  display: flex;
+  flex-direction: column;
+  height: 80vh; /* fixed height so scroll works */
 }
+.box .list {
+  flex: 1;
+  overflow-y: auto; /* vertical scroll */
+  overflow-x: hidden; /* remove horizontal scroll */
+  margin: 0;
+  padding: 0.8rem 0;
+  background-color: inherit;
+}
+
+/* ✅ Chrome, Edge, Safari */
+.box .list::-webkit-scrollbar {
+  width: 10px; /* scrollbar thickness */
+}
+
+.box .list::-webkit-scrollbar-track {
+  background: var(--color-background-900); /* track background */
+  border-radius: 10px;
+  margin: 4px 0; /* space above/below track */
+}
+
+.box .list {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary-light) var(--color-background-900);
+}
+
+/* .box .list::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    var(--color-primary-light),
+    var(--color-primary)
+  ); 
+  border-radius: 10px;
+  border: 2px solid var(--color-background-900);
+} */
+
+/* .box .list::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary); 
+} */
 
 .loader {
   text-align: center;
@@ -135,10 +175,23 @@ body {
   z-index: 999;
 }
 
+/* .list {
+  list-style: none;
+  padding: 0.8rem 0;
+  overflow: hidden;
+} */
+body {
+  margin: 0; /* remove default body margin */
+  background-color: #000; /* or your page bg color */
+}
+
 .list {
   list-style: none;
   padding: 0.8rem 0;
-  /* overflow: scroll; */
+  /* min-height: 50% !important; */
+  /* overflow: auto;  */
+  margin: 0;
+  background-color: inherit; /* match parent bg, or set your own */
 }
 
 .list-watched {
