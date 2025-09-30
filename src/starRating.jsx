@@ -22,7 +22,6 @@ export default function StarRating({
   const [tempRating, setTempRating] = useState(0);
 
   const handleRating = (rating) => {
-    console.log("sachin");
     setRating(rating);
     onSetRating(rating);
   };
